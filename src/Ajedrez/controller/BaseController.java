@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajedrez.controller;
+package Ajedrez.controller;
 
+import ajedrez.controller.Controller;
+import Ajedrez.controller.BaseController;
 import Ajedrez.Hour;
 import java.net.URL;
 import java.util.ResourceBundle;

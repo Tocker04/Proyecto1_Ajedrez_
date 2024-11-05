@@ -13,10 +13,7 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author Ivannia Rojas
- */
+
 public class Hour extends Thread {
 
     private final Label systemTime;
