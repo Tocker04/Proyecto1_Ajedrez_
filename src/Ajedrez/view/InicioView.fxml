@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ajedrez.controller.InicioController">
+   <children>
+      <ImageView fitHeight="663.0" fitWidth="1265.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/fondo_P.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="308.0" layoutY="138.0" prefHeight="51.0" prefWidth="427.0" text="A  J  E  D  R  E  Z" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="52.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnJugar" layoutX="461.0" layoutY="230.0" mnemonicParsing="false" onAction="#onActionJugar" style="-fx-background-color: #2ecc71;" text="Jugar" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReglas" layoutX="464.0" layoutY="293.0" mnemonicParsing="false" onAction="#onActionReglas" style="-fx-background-color: #f4d03f;" text="Reglas" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnInfoNosotros" layoutX="393.0" layoutY="356.0" mnemonicParsing="false" onAction="#onActionVerInfo" style="-fx-background-color: #5dade2;" text="Info de nosotros" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

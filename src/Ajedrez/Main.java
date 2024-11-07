@@ -19,9 +19,9 @@ public class Main extends Application {
         FlowController.getInstance().InitializeFlow(stage, null);
 
         //stage.getIcons().add(new Image("chess/resources/icon_.png"));//Establece el icono del programa.
-        stage.setTitle("Esqueleto");
+        stage.setTitle("Juego de Ajedrez");
         FlowController.getInstance().goMain("Base");
-
+        FlowController.getInstance().goView("InicioView");
     }
 
     /**
