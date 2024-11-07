@@ -1,6 +1,7 @@
 
 package Ajedrez.controller;
 
+import ajedrez.controller.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,7 +16,7 @@ import javafx.scene.layout.VBox;
  *
  * @author User
  */
-public class TableroController implements Initializable {
+public class TableroController extends Controller implements Initializable {
 
     @FXML
     private Pane A8;
@@ -227,5 +228,10 @@ public class TableroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @Override
+    public void initialize() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
