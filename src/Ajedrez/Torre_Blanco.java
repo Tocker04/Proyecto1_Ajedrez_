@@ -8,6 +8,13 @@ package Ajedrez;
  *
  * @author froya
  */
-public class Torre_Blanco {
-    
+public class Torre_Blanco extends Fichas {
+    public Torre_Blanco(String color, int posicionX, int posicionY) {
+        super(color, posicionX, posicionY);
+    }
+
+    @Override
+    public boolean movimientoValido(int xDestino, int yDestino) {
+        return (posicionX == xDestino || posicionY == yDestino);
+    }
 }

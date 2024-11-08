@@ -8,6 +8,14 @@ package Ajedrez;
  *
  * @author froya
  */
-public class Reina_Negro {
-    
+public class Reina_Negro extends Fichas {
+    public Reina_Negro(String color, int posicionX, int posicionY) {
+        super(color, posicionX, posicionY);
+    }
+
+    @Override
+    public boolean movimientoValido(int xDestino, int yDestino) {
+        return (posicionX == xDestino || posicionY == yDestino || 
+                Math.abs(posicionX - xDestino) == Math.abs(posicionY - yDestino));
+    }
 }
