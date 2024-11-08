@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ajedrez.controller.SelecJugadorController">
+   <children>
+      <ImageView fitHeight="714.0" fitWidth="1044.0" layoutX="-25.0" layoutY="-58.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/fondo_P.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="147.0" layoutY="55.0" opacity="0.52" prefHeight="489.0" prefWidth="700.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #2c3e50;" />
+      <Button fx:id="btnJugarTablero" layoutX="607.0" layoutY="425.0" mnemonicParsing="false" onAction="#onActionJugarSelec" style="-fx-background-color: #29fa0c;" text="Jugar">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtTiempoPartida" alignment="CENTER" layoutX="238.0" layoutY="419.0" prefHeight="44.0" prefWidth="353.0" promptText="Ingrese el tiempo en minutos (1-60)" style="-fx-background-color: transparent; -fx-border-color: #0cfac4; -fx-border-width: 2px; -fx-border-radius: 10; -fx-text-fill: white; -fx-padding: 5px;">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnGuardarSelec" layoutX="442.0" layoutY="299.0" mnemonicParsing="false" onAction="#onActionGuardarSelec" style="-fx-background-color: #0cfac4;" text="Guardar">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="rbfichaB" layoutX="401.0" layoutY="126.0" mnemonicParsing="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="EscogerJugador" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbfichaN" layoutX="520.0" layoutY="128.0" mnemonicParsing="false" toggleGroup="$EscogerJugador">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="txtNombreJugador" alignment="CENTER" depthTest="DISABLE" layoutX="369.0" layoutY="241.0" promptText="Nombre Jugador" style="-fx-background-color: transparent; -fx-border-color: #0cfac4; -fx-border-width: 2px; -fx-border-radius: 10; -fx-padding: 5px; -fx-text-fill: white;">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="119.0" fitWidth="119.0" layoutX="547.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Torre_negra.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="119.0" layoutX="282.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Torre_Blanca.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

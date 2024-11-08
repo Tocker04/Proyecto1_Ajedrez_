@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 /**
  * FXML Controller class
  *
- * @author User
+ * @author Evans
  */
 public class InicioController extends Controller implements Initializable {
 
@@ -35,6 +35,7 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void onActionJugar(ActionEvent event) {
+        FlowController.getInstance().goView("SelecJugadorView");
     }
 
     @FXML
