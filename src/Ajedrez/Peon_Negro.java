@@ -13,6 +13,10 @@ public class Peon_Negro extends Fichas {
         super(color, posicionX, posicionY);
     }
 
+    public Peon_Negro(String negro) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     @Override
     public boolean movimientoValido(int xDestino, int yDestino) {
         int dy = color.equals("blanco") ? 1 : -1;

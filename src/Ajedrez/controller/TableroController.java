@@ -1,6 +1,18 @@
 
 package Ajedrez.controller;
 
+import Ajedrez.Alfil_Blanco;
+import Ajedrez.Alfil_Negro;
+import Ajedrez.Caballo_Blanco;
+import Ajedrez.Caballo_Negro;
+import Ajedrez.Peon_Blanco;
+import Ajedrez.Peon_Negro;
+import Ajedrez.Reina_Blanco;
+import Ajedrez.Reina_Negro;
+import Ajedrez.Rey_Blanco;
+import Ajedrez.Rey_Negro;
+import Ajedrez.Torre_Blanco;
+import Ajedrez.Torre_Negro;
 import ajedrez.controller.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -240,45 +252,45 @@ public class TableroController extends Controller implements Initializable {
     }
 
     private void inicializarPiezas() {
-     // Crear instancias de cada pieza con su respectivo color
-        PeonBlanco1 = new Peon("Blanco");
-        PeonBlanco2 = new Peon("Blanco");
-        PeonBlanco3 = new Peon("Blanco");
-        PeonBlanco4 = new Peon("Blanco");
-        PeonBlanco5 = new Peon("Blanco");
-        PeonBlanco6 = new Peon("Blanco");
-        PeonBlanco7 = new Peon("Blanco");
-        PeonBlanco8 = new Peon("Blanco");
+        // Crear instancias de cada pieza con su respectivo color
+        Peon_Blanco PeonBlanco1 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco2 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco3 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco4 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco5 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco6 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco7 = new Peon_Blanco("Blanco");
+        Peon_Blanco PeonBlanco8 = new Peon_Blanco("Blanco");
         
-        PeonNegro1 = new Peon("Negro");
-        PeonNegro2 = new Peon("Negro");
-        PeonNegro3 = new Peon("Negro");
-        PeonNegro4 = new Peon("Negro");
-        PeonNegro5 = new Peon("Negro");
-        PeonNegro6 = new Peon("Negro");
-        PeonNegro7 = new Peon("Negro");
-        PeonNegro8 = new Peon("Negro");
+        Peon_Negro PeonNegro1 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro2 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro3 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro4 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro5 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro6 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro7 = new Peon_Negro("Negro");
+        Peon_Negro PeonNegro8 = new Peon_Negro("Negro");
         
-        TorreBlancaIzq = new Torre("Blanco");
-        TorreBlancaDer = new Torre("Blanco");
-        TorreNegraIzq = new Torre("Negro");
-        TorreNegraDer = new Torre("Negro");
+        Torre_Blanco TorreBlancaIzq = new Torre_Blanco("Blanco");
+        Torre_Blanco TorreBlancaDer = new Torre_Blanco("Blanco");
+        Torre_Negro TorreNegraIzq = new Torre_Negro("Negro");
+        Torre_Negro TorreNegraDer = new Torre_Negro("Negro");
         
-        CaballoBlancoIzq = new Caballo("Blanco");
-        CaballoBlancoDer = new Caballo("Blanco");
-        CaballoNegroIzq = new Caballo("Negro");
-        CaballoNegroDer = new Caballo("Negro");
+        Caballo_Blanco CaballoBlancoIzq = new Caballo_Blanco("Blanco");
+        Caballo_Blanco CaballoBlancoDer = new Caballo_Blanco("Blanco");
+        Caballo_Negro CaballoNegroIzq = new Caballo_Negro("Negro");
+        Caballo_Negro CaballoNegroDer = new Caballo_Negro("Negro");
 
-        AlfilBlancoIzq = new Alfil("Blanco");
-        AlfilBlancoDer = new Alfil("Blanco");
-        AlfilNegroIzq = new Alfil("Negro");
-        AlfilNegroDer = new Alfil("Negro");
+        Alfil_Blanco AlfilBlancoIzq = new Alfil_Blanco("Blanco");
+        Alfil_Blanco AlfilBlancoDer = new Alfil_Blanco("Blanco");
+        Alfil_Negro AlfilNegroIzq = new Alfil_Negro("Negro");
+        Alfil_Negro AlfilNegroDer = new Alfil_Negro("Negro");
         
-        DamaBlanca = new Reina("Blanco");
-        DamaNegra = new Reina("Negro");
+        Reina_Blanco DamaBlanca = new Reina_Blanco("Blanco");
+        Reina_Negro DamaNegra = new Reina_Negro("Negro");
         
-        ReyBlanco = new Rey("Blanco");
-        ReyNegro = new Rey("Negro");
+        Rey_Blanco ReyBlanco = new Rey_Blanco("Blanco");
+        Rey_Negro ReyNegro = new Rey_Negro("Negro");
     }
 
     private void colocarPiezasIniciales() {
