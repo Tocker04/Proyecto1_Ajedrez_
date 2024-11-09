@@ -13,9 +13,6 @@ public class Caballo_Negro extends Fichas {
         super(color, posicionX, posicionY);
     }
 
-    public Caballo_Negro(String negro) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public boolean movimientoValido(int xDestino, int yDestino) {

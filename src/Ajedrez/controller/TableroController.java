@@ -251,7 +251,7 @@ public class TableroController extends Controller implements Initializable {
     
     }
 
-    private void inicializarPiezas() {
+   /* private void inicializarPiezas() {
         // Crear instancias de cada pieza con su respectivo color
         Peon_Blanco PeonBlanco1 = new Peon_Blanco("Blanco");
         Peon_Blanco PeonBlanco2 = new Peon_Blanco("Blanco");
@@ -292,7 +292,7 @@ public class TableroController extends Controller implements Initializable {
         Rey_Blanco ReyBlanco = new Rey_Blanco("Blanco");
         Rey_Negro ReyNegro = new Rey_Negro("Negro");
     }
-
+*/
     private void colocarPiezasIniciales() {
     // Colocar las piezas blancas
         A2.getChildren().add(Peon_Blanco1);
@@ -470,7 +470,7 @@ public class TableroController extends Controller implements Initializable {
     }
 
     // Helper: Obtener el color de la pieza desde su imagen
-private String obtenerColorPieza(ImageView imagenPieza) {
+/*private String obtenerColorPieza(ImageView imagenPieza) {
     if (imagenPieza.getImage() == null) {
         return ""; // No hay imagen
     }
@@ -497,5 +497,21 @@ private String obtenerColorPieza(ImageView imagenPieza) {
         String id = casilla.getId();
         return Character.getNumericValue(id.charAt(1)); // Suponiendo IDs como A1, B8, etc.
     }
-}
+*/
 
+    private String obtenerColorPieza(ImageView imagenPieza) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private int obtenerFila(Pane origen) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean esPeon(ImageView imagenPieza) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void inicializarPiezas() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
