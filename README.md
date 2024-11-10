@@ -11,8 +11,11 @@ Con este manual se tiene como propósito, guiar al usuario en el uso del sistema
 ________________________________________
 Requisitos del Sistema:
 •	Sistema Operativo: Windows, macOS o Linux.
+
 •	Java: Se requiere tener instalado Java 8 (preferiblemente esta versión) o superior.
-•	NetBeans IDE: Recomendado para compilar el código si se desea ver el juego en desarrollo (versión 21).
+
+•	NetBeans IDE: Recomendado para compilar el código si se desea ver el juego en desarrollo (versión 21
+
 •	Requisitos de Hardware: El juego puede ejecutarse en cualquier máquina que soporte y tenga instalado Java.
 
 
@@ -20,15 +23,10 @@ Requisitos del Sistema:
 
 ________________________________________
 Instalación y Ejecución
-1.	Descarga e instalación:
-o	Descargar el archivo .ZIP que contiene el proyecto, ya sea de GitHub o del Aula Virtual.
-o	Una vez hecho eso, extraer el proyecto y abrirlo en NetBeans.
-o	Una vez abierto en NetBeans, asegúrese de tener instalado JavaFX y ejecute el archivo “Main” (click derecho, Run file) del proyecto desde NetBeans.
+1.	Descarga e instalación: Descargar el archivo .ZIP que contiene el proyecto, ya sea de GitHub o del Aula Virtual. Una vez hecho eso, extraer el proyecto y abrirlo en NetBeans.
+Una vez abierto en NetBeans, asegúrese de tener instalado JavaFX y ejecute el archivo “Main” (click derecho, Run file) del proyecto desde NetBeans.
 
-2.	Ejecutar el juego:
-o	Al ejecutar el juego, verá la página de inicio con 3 botones, “Jugar, Reglas y Info nosotros” Los botones “Reglas e Info nosotros llevaban a las siguientes pantallas y se puede regresar a la página de inicio”
-
-
+2.	Ejecutar el juego: Al ejecutar el juego, verá la página de inicio con 3 botones, “Jugar, Reglas y Info nosotros” Los botones “Reglas e Info nosotros llevaban a las siguientes pantallas y se puede regresar a la página de inicio”
 
 
 ________________________________________
