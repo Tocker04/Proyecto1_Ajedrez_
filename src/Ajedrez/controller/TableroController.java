@@ -8,6 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -226,9 +229,75 @@ public class TableroController extends Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Fichas negras
+    configurarEventosDeArrastre(Torre_negra_izq);
+    configurarEventosDeArrastre(Caballo_negro_izq);
+    configurarEventosDeArrastre(Alfil_negro_izq);
+    configurarEventosDeArrastre(Dama_negra);
+    configurarEventosDeArrastre(Rey_negro);
+    configurarEventosDeArrastre(Alfil_negro_der);
+    configurarEventosDeArrastre(Caballo_negro_der);
+    configurarEventosDeArrastre(Torre_negra_der);
+    
+    configurarEventosDeArrastre(Peon_negro1);
+    configurarEventosDeArrastre(Peon_negro2);
+    configurarEventosDeArrastre(Peon_negro3);
+    configurarEventosDeArrastre(Peon_negro4);
+    configurarEventosDeArrastre(Peon_negro5);
+    configurarEventosDeArrastre(Peon_negro6);
+    configurarEventosDeArrastre(Peon_negro7);
+    configurarEventosDeArrastre(Peon_negro8);
+
+    // Fichas blancas
+    configurarEventosDeArrastre(Torre_Blanca_izq);
+    configurarEventosDeArrastre(Caballo_Blanca_izq);
+    configurarEventosDeArrastre(Alfil_Blanca_izq);
+    configurarEventosDeArrastre(Dama_Blanca);
+    configurarEventosDeArrastre(Rey_Blanca);
+    configurarEventosDeArrastre(Alfil_Blanca_der);
+    configurarEventosDeArrastre(Caballo_Blanca_der);
+    configurarEventosDeArrastre(Torre_Blanca_der);
+    
+    configurarEventosDeArrastre(Peon_Blanco1);
+    configurarEventosDeArrastre(Peon_Blanco2);
+    configurarEventosDeArrastre(Peon_Blanco3);
+    configurarEventosDeArrastre(Peon_Blanco4);
+    configurarEventosDeArrastre(Peon_Blanco5);
+    configurarEventosDeArrastre(Peon_Blanco6);
+    configurarEventosDeArrastre(Peon_Blanco7);
+    configurarEventosDeArrastre(Peon_Blanco8);
     }    
 
+    private void configurarEventosDeArrastre(ImageView ficha) {
+        ficha.setOnDragDetected(event -> {
+            Dragboard db = ficha.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(ficha.getImage());
+            db.setContent(content);
+            event.consume();
+        });
+
+        ficha.setOnDragOver(event -> {
+            if (event.getGestureSource() != ficha && event.getDragboard().hasImage()) {
+                event.acceptTransferModes(TransferMode.MOVE);
+            }
+            event.consume();
+        });
+
+        ficha.setOnDragDropped(event -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                // Obtén el ImageView del destino (casilla)
+                ImageView destino = (ImageView) event.getGestureTarget();
+                destino.setImage(db.getImage());
+                ficha.setImage(null); // Remueve la imagen de la casilla original
+                event.setDropCompleted(true);
+            } else {
+                event.setDropCompleted(false);
+            }
+            event.consume();
+        });
+    }
     @Override
     public void initialize() {
    
