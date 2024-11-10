@@ -8,14 +8,16 @@ package Ajedrez;
  *
  * @author froya
  */
-public class Alfil_Negro extends Fichas {
-    public Alfil_Negro(String color, int posicionX, int posicionY) {
+public class Caballo extends Fichas {
+
+    public Caballo(String color, int posicionX, int posicionY) {
         super(color, posicionX, posicionY);
     }
 
-
     @Override
     public boolean movimientoValido(int xDestino, int yDestino) {
-        return Math.abs(posicionX - xDestino) == Math.abs(posicionY - yDestino);
+        int dx = Math.abs(xDestino - posicionX);
+        int dy = Math.abs(yDestino - posicionY);
+        return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
     }
 }

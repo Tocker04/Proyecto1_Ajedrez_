@@ -4,21 +4,23 @@
  */
 package Ajedrez;
 
+import java.awt.Color;
+import java.util.List;
+
 /**
  *
  * @author froya
  */
-public class Caballo_Blanco extends Fichas {
-    public Caballo_Blanco(String color, int posicionX, int posicionY) {
+public class Rey extends Fichas {
+
+    public Rey(String color, int posicionX, int posicionY) {
         super(color, posicionX, posicionY);
     }
 
-   
-
     @Override
     public boolean movimientoValido(int xDestino, int yDestino) {
-        int dx = Math.abs(posicionX - xDestino);
-        int dy = Math.abs(posicionY - yDestino);
-        return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
+        int dx = Math.abs(xDestino - posicionX);
+        int dy = Math.abs(yDestino - posicionY);
+        return dx <= 1 && dy <= 1;
     }
 }

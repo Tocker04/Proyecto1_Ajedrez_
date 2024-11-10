@@ -8,17 +8,15 @@ package Ajedrez;
  *
  * @author froya
  */
-public class Rey_Blanco extends Fichas {
-    public Rey_Blanco(String color, int posicionX, int posicionY) {
+public class Reina extends Fichas {
+
+    public Reina(String color, int posicionX, int posicionY) {
         super(color, posicionX, posicionY);
     }
 
- 
-
     @Override
     public boolean movimientoValido(int xDestino, int yDestino) {
-        int dx = Math.abs(xDestino - posicionX);
-        int dy = Math.abs(yDestino - posicionY);
-        return dx <= 1 && dy <= 1;
+        return Math.abs(xDestino - posicionX) == Math.abs(yDestino - posicionY) || 
+               posicionX == xDestino || posicionY == yDestino;
     }
 }

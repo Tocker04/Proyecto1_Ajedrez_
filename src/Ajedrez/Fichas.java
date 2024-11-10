@@ -33,4 +33,10 @@ protected String color;
     }
 
     public abstract boolean movimientoValido(int xDestino, int yDestino);
+
+    boolean puedeMoverse(int xInicial, int yInicial, int xDestino, int yDestino, Tablero aThis) {
+        
+    return false;
+        
+    }
 }

@@ -1,19 +1,5 @@
-
 package Ajedrez.controller;
 
-import Ajedrez.Alfil_Blanco;
-import Ajedrez.Alfil_Negro;
-import Ajedrez.Caballo_Blanco;
-import Ajedrez.Caballo_Negro;
-import Ajedrez.Peon_Blanco;
-import Ajedrez.Peon_Negro;
-import Ajedrez.Reina_Blanco;
-import Ajedrez.Reina_Negro;
-import Ajedrez.Rey_Blanco;
-import Ajedrez.Rey_Negro;
-import Ajedrez.Torre_Blanco;
-import Ajedrez.Torre_Negro;
-import ajedrez.controller.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -25,372 +11,91 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-/**
- * FXML Controller class
- *
- * @author User
- */
-public class TableroController extends Controller implements Initializable {
+public class TableroController implements Initializable {
 
     @FXML
-    private Pane A8;
+    private Pane A1, A2, A3, A4, A5, A6, A7, A8;
     @FXML
-    private ImageView Torre_negra_izq;
+    private Pane B1, B2, B3, B4, B5, B6, B7, B8;
     @FXML
-    private Pane A7;
+    private Pane C1, C2, C3, C4, C5, C6, C7, C8;
     @FXML
-    private ImageView Peon_negro1;
+    private Pane D1, D2, D3, D4, D5, D6, D7, D8;
     @FXML
-    private Pane A6;
+    private Pane E1, E2, E3, E4, E5, E6, E7, E8;
     @FXML
-    private Pane A5;
+    private Pane F1, F2, F3, F4, F5, F6, F7, F8;
     @FXML
-    private Pane A3;
+    private Pane G1, G2, G3, G4, G5, G6, G7, G8;
     @FXML
-    private Pane A2;
-    @FXML
-    private ImageView Peon_Blanco1;
-    @FXML
-    private Pane A1;
-    @FXML
-    private ImageView Torre_Blanca_izq;
-    @FXML
-    private Pane A4;
-    @FXML
-    private Pane B8;
-    @FXML
-    private ImageView Caballo_negro_izq;
-    @FXML
-    private Pane B6;
-    @FXML
-    private Pane B5;
-    @FXML
-    private Pane B4;
-    @FXML
-    private Pane B3;
-    @FXML
-    private Pane B2;
-    @FXML
-    private ImageView Peon_Blanco2;
-    @FXML
-    private Pane B1;
-    @FXML
-    private ImageView Caballo_Blanca_izq;
-    @FXML
-    private Pane C8;
-    @FXML
-    private ImageView Alfil_negro_izq;
-    @FXML
-    private Pane C7;
-    @FXML
-    private ImageView Peon_negro3;
-    @FXML
-    private Pane C6;
-    @FXML
-    private Pane C5;
-    @FXML
-    private Pane C3;
-    @FXML
-    private Pane C2;
-    @FXML
-    private ImageView Peon_Blanco3;
-    @FXML
-    private Pane C1;
-    @FXML
-    private ImageView Alfil_Blanca_izq;
-    @FXML
-    private Pane B7;
-    @FXML
-    private ImageView Peon_negro2;
-    @FXML
-    private Pane C4;
-    @FXML
-    private Pane D8;
-    @FXML
-    private ImageView Dama_negra;
-    @FXML
-    private Pane D7;
-    @FXML
-    private ImageView Peon_negro4;
-    @FXML
-    private Pane D6;
-    @FXML
-    private Pane D5;
-    @FXML
-    private Pane D4;
-    @FXML
-    private Pane D3;
-    @FXML
-    private Pane D2;
-    @FXML
-    private ImageView Peon_Blanco4;
-    @FXML
-    private Pane D1;
-    @FXML
-    private ImageView Dama_Blanca;
-    @FXML
-    private Pane E8;
-    @FXML
-    private ImageView Rey_negro;
-    @FXML
-    private Pane E7;
-    @FXML
-    private ImageView Peon_negro5;
-    @FXML
-    private Pane E6;
-    @FXML
-    private Pane E5;
-    @FXML
-    private Pane E4;
-    @FXML
-    private Pane E2;
-    @FXML
-    private ImageView Peon_Blanco5;
-    @FXML
-    private Pane E1;
-    @FXML
-    private ImageView Rey_Blanca;
-    @FXML
-    private Pane F8;
-    @FXML
-    private ImageView Alfil_negro_der;
-    @FXML
-    private Pane F7;
-    @FXML
-    private ImageView Peon_negro6;
-    @FXML
-    private Pane F6;
-    @FXML
-    private Pane F5;
-    @FXML
-    private Pane F4;
-    @FXML
-    private Pane F3;
-    @FXML
-    private Pane F2;
-    @FXML
-    private ImageView Peon_Blanco6;
-    @FXML
-    private Pane F1;
-    @FXML
-    private ImageView Alfil_Blanca_der;
-    @FXML
-    private Pane G8;
-    @FXML
-    private ImageView Caballo_negro_der;
-    @FXML
-    private Pane G7;
-    @FXML
-    private ImageView Peon_negro7;
-    @FXML
-    private Pane G6;
-    @FXML
-    private Pane G5;
-    @FXML
-    private Pane G4;
-    @FXML
-    private Pane G3;
-    @FXML
-    private Pane G2;
-    @FXML
-    private ImageView Peon_Blanco7;
-    @FXML
-    private Pane G1;
-    @FXML
-    private ImageView Caballo_Blanca_der;
-    @FXML
-    private Pane H8;
-    @FXML
-    private ImageView Torre_negra_der;
-    @FXML
-    private Pane H7;
-    @FXML
-    private ImageView Peon_negro8;
-    @FXML
-    private Pane H6;
-    @FXML
-    private Pane H5;
-    @FXML
-    private Pane H4;
-    @FXML
-    private Pane H3;
-    @FXML
-    private Pane H2;
-    @FXML
-    private ImageView Peon_Blanco8;
-    @FXML
-    private Pane H1;
-    @FXML
-    private ImageView Torre_Blanca_der;
-    @FXML
-    private Pane E3;
-    @FXML
-    private VBox capturasBlancas;
-    @FXML
-    private VBox capturasNegras;
-    @FXML
-    private Label jugadoractual;
-    @FXML
-    private Label tiempoBlancas;
-    @FXML
-    private Label tiempoNegras;
+    private Pane H1, H2, H3, H4, H5, H6, H7, H8;
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private VBox capturasBlancas, capturasNegras;
+    @FXML
+    private Label jugadoractual, tiempoBlancas, tiempoNegras;
+
+    private boolean turnoBlanco = true;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-// Inicialización de las piezas con sus imágenes y posiciones iniciales
         inicializarPiezas();
         colocarPiezasIniciales();
         jugadoractual.setText("Blancas");
-    }    
-
-    @Override
-    public void initialize() {
-    
     }
 
-   /* private void inicializarPiezas() {
+    private void inicializarPiezas() {
         // Crear instancias de cada pieza con su respectivo color
-        Peon_Blanco PeonBlanco1 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco2 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco3 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco4 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco5 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco6 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco7 = new Peon_Blanco("Blanco");
-        Peon_Blanco PeonBlanco8 = new Peon_Blanco("Blanco");
-        
-        Peon_Negro PeonNegro1 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro2 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro3 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro4 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro5 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro6 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro7 = new Peon_Negro("Negro");
-        Peon_Negro PeonNegro8 = new Peon_Negro("Negro");
-        
-        Torre_Blanco TorreBlancaIzq = new Torre_Blanco("Blanco");
-        Torre_Blanco TorreBlancaDer = new Torre_Blanco("Blanco");
-        Torre_Negro TorreNegraIzq = new Torre_Negro("Negro");
-        Torre_Negro TorreNegraDer = new Torre_Negro("Negro");
-        
-        Caballo_Blanco CaballoBlancoIzq = new Caballo_Blanco("Blanco");
-        Caballo_Blanco CaballoBlancoDer = new Caballo_Blanco("Blanco");
-        Caballo_Negro CaballoNegroIzq = new Caballo_Negro("Negro");
-        Caballo_Negro CaballoNegroDer = new Caballo_Negro("Negro");
-
-        Alfil_Blanco AlfilBlancoIzq = new Alfil_Blanco("Blanco");
-        Alfil_Blanco AlfilBlancoDer = new Alfil_Blanco("Blanco");
-        Alfil_Negro AlfilNegroIzq = new Alfil_Negro("Negro");
-        Alfil_Negro AlfilNegroDer = new Alfil_Negro("Negro");
-        
-        Reina_Blanco DamaBlanca = new Reina_Blanco("Blanco");
-        Reina_Negro DamaNegra = new Reina_Negro("Negro");
-        
-        Rey_Blanco ReyBlanco = new Rey_Blanco("Blanco");
-        Rey_Negro ReyNegro = new Rey_Negro("Negro");
+        // Crear y asignar las imágenes de las piezas
     }
-*/
+
     private void colocarPiezasIniciales() {
-    // Colocar las piezas blancas
-        A2.getChildren().add(Peon_Blanco1);
+        A2.getChildren().add(crearImagenPeonBlanco());
         B2.getChildren().add(crearImagenPeonBlanco());
-        C2.getChildren().add(crearImagenPeonBlanco());
-        D2.getChildren().add(crearImagenPeonBlanco());
-        E2.getChildren().add(crearImagenPeonBlanco());
-        F2.getChildren().add(crearImagenPeonBlanco());
-        G2.getChildren().add(crearImagenPeonBlanco());
-        H2.getChildren().add(crearImagenPeonBlanco());
-        
-        A1.getChildren().add(crearImagenTorreBlanca());
-        H1.getChildren().add(crearImagenTorreBlanca());
-        B1.getChildren().add(crearImagenCaballoBlanco());
-        G1.getChildren().add(crearImagenCaballoBlanco());
-        C1.getChildren().add(crearImagenAlfilBlanco());
-        F1.getChildren().add(crearImagenAlfilBlanco());
-        D1.getChildren().add(crearImagenDamaBlanca());
-        E1.getChildren().add(crearImagenReyBlanco());
-
-        // Colocar las piezas negras
-        A7.getChildren().add(crearImagenPeonNegro());
-        B7.getChildren().add(crearImagenPeonNegro());
-        C7.getChildren().add(crearImagenPeonNegro());
-        D7.getChildren().add(crearImagenPeonNegro());
-        E7.getChildren().add(crearImagenPeonNegro());
-        F7.getChildren().add(crearImagenPeonNegro());
-        G7.getChildren().add(crearImagenPeonNegro());
-        H7.getChildren().add(crearImagenPeonNegro());
-
-        A8.getChildren().add(crearImagenTorreNegra());
-        H8.getChildren().add(crearImagenTorreNegra());
-        B8.getChildren().add(crearImagenCaballoNegro());
-        G8.getChildren().add(crearImagenCaballoNegro());
-        C8.getChildren().add(crearImagenAlfilNegro());
-        F8.getChildren().add(crearImagenAlfilNegro());
-        D8.getChildren().add(crearImagenDamaNegra());
-        E8.getChildren().add(crearImagenReyNegro());
+        // Continuar con el resto de las piezas iniciales...
     }
 
     private ImageView crearImagenPeonBlanco() {
-        return new ImageView(new Image("/resources/Peon_Blanco.png"));
+        ImageView imageView = new ImageView(new Image("/resources/Peon_Blanco.png"));
+        imageView.setUserData("Blanco"); // Asigna el color de la pieza como userData
+        return imageView;
     }
 
     private ImageView crearImagenPeonNegro() {
-        return new ImageView(new Image("/path/to/Peon_Negro.png"));
+        ImageView imageView = new ImageView(new Image("/resources/Peon_Negro.png"));
+        imageView.setUserData("Negro"); // Asigna el color de la pieza como userData
+        return imageView;
     }
 
     private ImageView crearImagenTorreBlanca() {
-        return new ImageView(new Image("/path/to/Torre_Blanca.png"));
+        ImageView imageView = new ImageView(new Image("/resources/Torre_Blanca.png"));
+        imageView.setUserData("Blanco"); // Asigna el color de la pieza como userData
+        return imageView;
     }
 
     private ImageView crearImagenTorreNegra() {
-        return new ImageView(new Image("/path/to/Torre_Negra.png"));
+        ImageView imageView = new ImageView(new Image("/resources/Torre_Negra.png"));
+        imageView.setUserData("Negro"); // Asigna el color de la pieza como userData
+        return imageView;
     }
 
-    private ImageView crearImagenCaballoBlanco() {
-        return new ImageView(new Image("/path/to/Caballo_Blanco.png"));
+    // Métodos similares para crear las imágenes de otras piezas...
+
+    // Cambia el turno entre blancas y negras
+    private void cambiarTurno() {
+        turnoBlanco = !turnoBlanco;
+        jugadoractual.setText(turnoBlanco ? "Blancas" : "Negras");
     }
 
-    private ImageView crearImagenCaballoNegro() {
-        return new ImageView(new Image("/path/to/Caballo_Negro.png"));
-    }
-
-    private ImageView crearImagenAlfilBlanco() {
-        return new ImageView(new Image("/path/to/Alfil_Blanco.png"));
-    }
-
-    private ImageView crearImagenAlfilNegro() {
-        return new ImageView(new Image("/path/to/Alfil_Negro.png"));
-    }
-
-    private ImageView crearImagenDamaBlanca() {
-        return new ImageView(new Image("/path/to/Dama_Blanca.png"));
-    }
-
-    private ImageView crearImagenDamaNegra() {
-        return new ImageView(new Image("/path/to/Dama_Negra.png"));
-    }
-
-    private ImageView crearImagenReyBlanco() {
-        return new ImageView(new Image("/path/to/Rey_Blanco.png"));
-    }
-
-    private ImageView crearImagenReyNegro() {
-        return new ImageView(new Image("/path/to/Rey_Negro.png"));
-    
-    }
-    private boolean turnoBlanco = true;
     // Mueve una pieza de un Pane a otro
     public boolean moverPieza(Pane origen, Pane destino) {
         if (esMovimientoValido(origen, destino)) {
             if (!destino.getChildren().isEmpty()) {
                 capturarPieza(destino); // Captura si hay una pieza enemiga en el destino
             }
-            Node pieza = origen.getChildren().get(0); // Obtener la pieza del origen
-            origen.getChildren().clear(); // Quitar pieza del origen
-            destino.getChildren().add(pieza); // Colocar pieza en el destino
+            Node pieza = origen.getChildren().get(0);
+            origen.getChildren().clear();
+            destino.getChildren().add(pieza);
             cambiarTurno();
             return true;
         } else {
@@ -399,11 +104,21 @@ public class TableroController extends Controller implements Initializable {
         }
     }
 
+    private void capturarPieza(Pane destino) {
+        Node pieza = destino.getChildren().get(0);
+        destino.getChildren().clear();
+        if (turnoBlanco) {
+            capturasNegras.getChildren().add(pieza);
+        } else {
+            capturasBlancas.getChildren().add(pieza);
+        }
+    }
+
     // Verifica si el movimiento es válido
     private boolean esMovimientoValido(Pane origen, Pane destino) {
         if (origen.getChildren().isEmpty()) {
             System.out.println("No hay pieza en la casilla de origen.");
-            return false; // No hay pieza para mover
+            return false;
         }
 
         Node pieza = origen.getChildren().get(0);
@@ -411,13 +126,11 @@ public class TableroController extends Controller implements Initializable {
             ImageView imagenPieza = (ImageView) pieza;
             String colorPieza = obtenerColorPieza(imagenPieza);
 
-            // Verificar si es el turno de la pieza correcta (blanca o negra)
             if ((turnoBlanco && !colorPieza.equals("Blanco")) || (!turnoBlanco && !colorPieza.equals("Negro"))) {
                 System.out.println("No es el turno de esta pieza.");
                 return false;
             }
 
-            // Verificar que no se mueva a una casilla ocupada por otra pieza del mismo color
             if (!destino.getChildren().isEmpty()) {
                 ImageView piezaDestino = (ImageView) destino.getChildren().get(0);
                 String colorDestino = obtenerColorPieza(piezaDestino);
@@ -427,91 +140,23 @@ public class TableroController extends Controller implements Initializable {
                 }
             }
 
-            // Aquí debes agregar lógica para cada tipo de pieza (peón, torre, caballo, etc.)
-            if (colorPieza.equals("Blanco") && esPeon(imagenPieza)) {
-                return movimientoValidoPeon(origen, destino, colorPieza);
-            }
-            
-            return true; // Movimiento válido básico
+            return true;
         }
         return false;
     }
 
-    // Lógica de movimiento específico para peones
-    private boolean movimientoValidoPeon(Pane origen, Pane destino, String colorPieza) {
-        int filaOrigen = obtenerFila(origen);
-        int filaDestino = obtenerFila(destino);
-        
-        if (colorPieza.equals("Blanco")) {
-            return filaDestino == filaOrigen + 1; // Peón blanco avanza hacia adelante
-        } else {
-            return filaDestino == filaOrigen - 1; // Peón negro avanza hacia atrás
-        }
-    }
-
-    // Alterna el turno entre jugadores
-    private void cambiarTurno() {
-        turnoBlanco = !turnoBlanco;
-        jugadoractual.setText(turnoBlanco ? "Blancas" : "Negras");
-    }
-
-    // Captura una pieza (mueve al área de capturas)
-    private void capturarPieza(Pane destino) {
-        if (!destino.getChildren().isEmpty()) {
-            Node piezaCapturada = destino.getChildren().get(0);
-            destino.getChildren().clear(); // Quitar pieza capturada del tablero
-            
-            if (turnoBlanco) {
-                capturasNegras.getChildren().add(piezaCapturada); // Agregar a capturas negras si es turno blanco
-            } else {
-                capturasBlancas.getChildren().add(piezaCapturada); // Agregar a capturas blancas si es turno negro
-            }
-        }
-    }
-
-    // Helper: Obtener el color de la pieza desde su imagen
-/*private String obtenerColorPieza(ImageView imagenPieza) {
-    if (imagenPieza.getImage() == null) {
-        return ""; // No hay imagen
-    }
-
-    String rutaImagen = imagenPieza.getImage().getUrl();
-    if (rutaImagen != null && rutaImagen.contains("Blanco")) {
-        return "Blanco";
-    } else if (rutaImagen != null && rutaImagen.contains("Negro")) {
-        return "Negro";
-    } else {
-        return ""; // Color desconocido
-    }
-}
-
-    // Helper: Verifica si la imagen corresponde a un peón (a partir del nombre de la imagen)
-   private boolean esPeon(ImageView imagenPieza) {
-    String rutaImagen = imagenPieza.getImage().getUrl();
-    
-    // Asegúrate de que la ruta no sea nula y contiene "Peon" en cualquier parte del nombre del archivo
-    return rutaImagen != null && rutaImagen.toLowerCase().contains("peon");
-}
-    // Helper: Obtener el número de fila basado en el nombre del Pane (e.g., A1 -> 1, A8 -> 8)
-    private int obtenerFila(Pane casilla) {
-        String id = casilla.getId();
-        return Character.getNumericValue(id.charAt(1)); // Suponiendo IDs como A1, B8, etc.
-    }
-*/
-
     private String obtenerColorPieza(ImageView imagenPieza) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // Recupera el color de la pieza usando el userData
+        return (String) imagenPieza.getUserData();
     }
 
-    private int obtenerFila(Pane origen) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private int obtenerFila(Pane pane) {
+        // Implementar lógica para obtener la fila del tablero basado en el ID del pane
+        return 0; // Ejemplo, cambiar según la lógica real
     }
 
-    private boolean esPeon(ImageView imagenPieza) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void inicializarPiezas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private int obtenerColumna(Pane pane) {
+        // Implementar lógica para obtener la columna del tablero basado en el ID del pane
+        return 0; // Ejemplo, cambiar según la lógica real
     }
 }
