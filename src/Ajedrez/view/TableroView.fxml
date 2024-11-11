@@ -530,5 +530,15 @@
                </font></Label>
          </children>
       </HBox>
+      <Label fx:id="jugadorblanco" layoutX="23.0" layoutY="213.0" prefHeight="35.0" prefWidth="162.0" text="Jugador Blanco:" textAlignment="CENTER" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="jugadornegro" layoutX="914.0" layoutY="206.0" prefHeight="35.0" prefWidth="162.0" text="Jugador Negro:" textAlignment="CENTER" textFill="#e5ff00">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,15 +1,17 @@
 
 package Ajedrez.controller;
-
 import Ajedrez.Jugador;
 import Ajedrez.util.FlowController;
 import Ajedrez.util.Mensaje;
 import java.net.URL;
 import ajedrez.controller.Controller;
+
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.fxml.Initializable;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -81,40 +83,41 @@ public class SelecJugadorController extends Controller implements Initializable 
     }
 
     @FXML
-    private void onActionGuardarSelec(ActionEvent event) {
-        String nombre = txtNombreJugador.getText();
-        String colorFicha = rbfichaB.isSelected() ? "Blancas" : "Negras";
+private void onActionGuardarSelec(ActionEvent event) {
+    String nombre = txtNombreJugador.getText();
+    String colorFicha = rbfichaB.isSelected() ? "Blancas" : "Negras";
 
-        if (nombre.isEmpty()) {
-            mostrarMensaje("Error", "Debe ingresar el nombre del jugador.");
-            return;
-        }
-
-        if (!isJugador1Saved) {
-            // Guardamos datos para el Jugador 1
-            jugador1 = new Jugador(nombre, colorFicha);
-            isJugador1Saved = true;
-            mostrarMensaje("Éxito", "El jugador 1 se guardó correctamente.");
-            txtNombreJugador.clear();
-
-            // Desactivamos la selección del color elegido para el Jugador 2
-            if (colorFicha.equals("Blancas")) {
-                rbfichaB.setDisable(true);
-                rbfichaN.setSelected(true);
-            } else {
-                rbfichaN.setDisable(true);
-                rbfichaB.setSelected(true);
-            }
-        } else {
-            // Guardamos datos para el Jugador 2
-            jugador2 = new Jugador(nombre, colorFicha.equals("Blancas") ? "Negras" : "Blancas");
-            mostrarMensaje("Éxito", "El jugador 2 se guardó correctamente.");
-
-            // Desactivamos el botón de guardar para evitar cambios adicionales
-            btnGuardarSelec.setDisable(true);
-        }
+    if (nombre.isEmpty()) {
+        mostrarMensaje("Error", "Debe ingresar el nombre del jugador.");
+        return;
     }
-    
+
+    if (!isJugador1Saved) {
+        // Guardamos datos para el Jugador 1
+        jugador1 = new Jugador(nombre, colorFicha);
+        isJugador1Saved = true;
+        mostrarMensaje("Éxito", "El jugador 1 se guardó correctamente.");
+        txtNombreJugador.clear();
+
+        // Desactivamos la selección del color elegido para el Jugador 2
+        if (colorFicha.equals("Blancas")) {
+            rbfichaB.setDisable(true);
+            rbfichaN.setSelected(true);
+        } else {
+            rbfichaN.setDisable(true);
+            rbfichaB.setSelected(true);
+        }
+    } else {
+        // Guardamos datos para el Jugador 2
+        jugador2 = new Jugador(nombre, colorFicha.equals("Blancas") ? "Negras" : "Blancas");
+        mostrarMensaje("Éxito", "El jugador 2 se guardó correctamente.");
+
+        // Desactivamos el botón de guardar para evitar cambios adicionales
+        btnGuardarSelec.setDisable(true);
+    }
+
+}
+
      private void mostrarMensaje(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);

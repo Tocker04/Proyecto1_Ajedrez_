@@ -4,6 +4,8 @@
  */
 package Ajedrez;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author froya
@@ -34,4 +36,5 @@ public class Tablero {
         }
         return false;
     }
+
 }
