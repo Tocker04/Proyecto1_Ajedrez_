@@ -1,4 +1,3 @@
-
 package Ajedrez.controller;
 
 import Ajedrez.Jugador;
@@ -229,10 +228,12 @@ public class TableroController extends Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     private Jugador jugador1;
     private Jugador jugador2;
     private String tiempoPartida;
+
+    boolean turnoBlanco;
+
     @FXML
     private Label lbJugadorNegro; //player con piezas negras
     @FXML
@@ -243,12 +244,10 @@ public class TableroController extends Controller implements Initializable {
     private Label lbTiempoNegras;
     @FXML
     private Label lbActualJugador;
-    
-    
-    
+
     @Override
     public void initialize() {
-        
+        /*
         // Inicializar eventos de drag-and-drop
         inicializarPiezas();
         
@@ -259,19 +258,22 @@ public class TableroController extends Controller implements Initializable {
         // Actualizar los labels con los nombres de los jugadores
         lbJugadorBlanco.setText(jugador1.getNombreJugador()); // Nombre jugador blanco
         lbJugadorNegro.setText(jugador2.getNombreJugador()); // Nombre jugador negro
-        
-        
-        
-        
+         */
     }
 
-    
     //@Override
     public void initialize(URL url, ResourceBundle rb) {
         // Inicializar eventos de drag-and-drop
-        //inicializarPiezas();
+        inicializarPiezas();
 
-        // Inicializar otros componentes, si es necesario
+        // Crear los jugadores
+        jugador1 = new Jugador("Jugador Blanco", "Blanco"); // Asignar nombre y color
+        jugador2 = new Jugador("Jugador Negro", "Negro");
+
+        // Actualizar los labels con los nombres de los jugadores
+        lbJugadorBlanco.setText(jugador1.getNombreJugador()); // Nombre jugador blanco
+        lbJugadorNegro.setText(jugador2.getNombreJugador()); // Nombre jugador negro
+
     }
 
     private void inicializarPiezas() {
@@ -284,7 +286,7 @@ public class TableroController extends Controller implements Initializable {
         configurarEventosDeArrastre(Alfil_negro_der);
         configurarEventosDeArrastre(Caballo_negro_der);
         configurarEventosDeArrastre(Torre_negra_der);
-        
+
         configurarEventosDeArrastre(Peon_negro1);
         configurarEventosDeArrastre(Peon_negro2);
         configurarEventosDeArrastre(Peon_negro3);
@@ -304,7 +306,7 @@ public class TableroController extends Controller implements Initializable {
         configurarEventosDeArrastre(Alfil_Blanca_der);
         configurarEventosDeArrastre(Caballo_Blanca_der);
         configurarEventosDeArrastre(Torre_Blanca_der);
-        
+
         configurarEventosDeArrastre(Peon_Blanco1);
         configurarEventosDeArrastre(Peon_Blanco2);
         configurarEventosDeArrastre(Peon_Blanco3);
@@ -314,6 +316,16 @@ public class TableroController extends Controller implements Initializable {
         configurarEventosDeArrastre(Peon_Blanco7);
         configurarEventosDeArrastre(Peon_Blanco8);
         //... Configurar arrastre para otras piezas blancas
+
+        configurarEventosParaPanes(A8, A7, A6, A5, A4, A3, A2, A1);
+        configurarEventosParaPanes(B8, B7, B6, B5, B4, B3, B2, B1);
+        configurarEventosParaPanes(C8, C7, C6, C5, C4, C3, C2, C1);
+        configurarEventosParaPanes(D8, D7, D6, D5, D4, D3, D2, D1);
+        configurarEventosParaPanes(E8, E7, E6, E5, E4, E3, E2, E1);
+        configurarEventosParaPanes(F8, F7, F6, F5, F4, F3, F2, F1);
+        configurarEventosParaPanes(G8, G7, G6, G5, G4, G3, G2, G1);
+        configurarEventosParaPanes(H8, H7, H6, H5, H4, H3, H2, H1);
+
     }
 
     private void configurarEventosDeArrastre(ImageView ficha) {
@@ -347,6 +359,75 @@ public class TableroController extends Controller implements Initializable {
         });
     }
 
+    private void configurarEventosParaPanes(Pane... panes) {
+        for (Pane pane : panes) {
+            pane.setOnDragOver(event -> {
+                if (event.getGestureSource() != pane && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.MOVE);
+                }
+                event.consume();
+            });
+
+            pane.setOnDragDropped(event -> {
+                Dragboard db = event.getDragboard();
+                if (db.hasImage()) {
+                    ImageView sourceFicha = (ImageView) event.getGestureSource();
+
+                    // Obtener el ImageView que estaba en el destino, si es que hay uno
+                    ImageView targetFicha = (ImageView) pane.getChildren().get(0);
+
+                    // Si ya hay una ficha en el destino, y es una ficha opuesta, la capturamos
+                    if (targetFicha != null && esPiezaOpuesta(sourceFicha, targetFicha)) {
+                        capturarPieza(targetFicha);
+                    }
+
+                    // Mover la ficha al nuevo Pane
+                    pane.getChildren().add(sourceFicha);  // Agregar la ficha al Pane destino
+                    targetFicha.setImage(db.getImage());  // Actualizar la imagen en el destino
+
+                    // Limpiar la imagen del Pane de origen
+                    ((Pane) sourceFicha.getParent()).getChildren().remove(sourceFicha);
+
+                    // Cambiar el turno después de un movimiento exitoso
+                    cambiarTurno();
+
+                    event.setDropCompleted(true);
+                } else {
+                    event.setDropCompleted(false);
+                }
+                event.consume();
+            });
+        }
+    }
+
+    private boolean esPiezaBlanca(ImageView ficha) {
+        return ficha.getId() != null && ficha.getId().contains("Blanca");
+    }
+
+    private boolean esPiezaNegra(ImageView ficha) {
+        return ficha.getId() != null && ficha.getId().contains("negra");
+    }
+
+    private boolean esPiezaOpuesta(ImageView source, ImageView target) {
+        return esPiezaBlanca(source) != esPiezaBlanca(target);
+    }
+
+    private void capturarPieza(ImageView piezaCapturada) {
+    if (piezaCapturada != null) {
+        // Identifica si la pieza es blanca o negra y agrégala a la lista correspondiente
+        if (esPiezaBlanca(piezaCapturada)) {
+            capturasBlancas.getChildren().add(piezaCapturada);
+        } else {
+            capturasNegras.getChildren().add(piezaCapturada);
+        }
+    }
+}
+
+    private void cambiarTurno() {
+        turnoBlanco = !turnoBlanco; // Cambia el turno usando la variable de instancia
+        jugadoractual.setText(turnoBlanco ? "Turno: Blancas" : "Turno: Negras");
+    }
+
     public void setParams(HashMap<String, Object> params) {
         if (params != null) {
             this.jugador1 = (Jugador) params.get("jugador1");
@@ -357,7 +438,7 @@ public class TableroController extends Controller implements Initializable {
             } else {
                 this.tiempoPartida = "No especificado"; // o algún valor predeterminado
             }
-            
+
         }
 
         // Suponemos que el jugador1 tiene las piezas blancas y el jugador2 las negras
@@ -373,7 +454,7 @@ public class TableroController extends Controller implements Initializable {
         System.out.println("Jugador 1: " + jugador1.getNombreJugador());
         System.out.println("Jugador 2: " + jugador2.getNombreJugador());
         System.out.println("Tiempo de partida: " + tiempoPartida);
-        
+
         actualizarVista();
     }
 
@@ -393,7 +474,4 @@ public class TableroController extends Controller implements Initializable {
         System.out.println("Tablero inicializado con jugadores: " + jugador1.getNombreJugador() + " y " + jugador2.getNombreJugador());
     }
 
-    
-
-    
 }
