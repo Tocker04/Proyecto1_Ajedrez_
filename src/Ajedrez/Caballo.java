@@ -20,4 +20,15 @@ public class Caballo extends Fichas {
         int dy = Math.abs(yDestino - posicionY);
         return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
     }
+
+    public void mover(int xDestino, int yDestino) {
+        // Si el movimiento es válido, actualizamos la posición del caballo
+        if (movimientoValido(xDestino, yDestino)) {
+            this.posicionX = xDestino;
+            this.posicionY = yDestino;
+            System.out.println("Caballo movido a la posición: (" + xDestino + ", " + yDestino + ")");
+        } else {
+            System.out.println("Movimiento no válido para el Caballo.");
+        }
+    }
 }
