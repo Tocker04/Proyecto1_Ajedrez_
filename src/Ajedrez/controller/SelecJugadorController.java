@@ -2,10 +2,12 @@
 package Ajedrez.controller;
 
 import Ajedrez.Jugador;
+import Ajedrez.controller.TableroController;
 import Ajedrez.util.FlowController;
 import Ajedrez.util.Mensaje;
 import java.net.URL;
 import ajedrez.controller.Controller;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,19 +43,26 @@ public class SelecJugadorController extends Controller implements Initializable 
     private Jugador jugador1;
     private Jugador jugador2;
     private boolean isJugador1Saved = false;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @Override
     public void initialize() {
-   
+
     }
 
     @FXML
     private void onActionJugarSelec(ActionEvent event) {
+
+        // Validar que se hayan configurado ambos jugadores
+        if (jugador1 == null || jugador2 == null) {
+            Mensaje.show(Alert.AlertType.ERROR, "Error", "Debe guardar ambos jugadores antes de iniciar el juego.");
+            return;
+        }
+
         // Validar que se haya configurado el tiempo de partida
         String tiempoStr = txtTiempoPartida.getText();
 
@@ -72,8 +81,16 @@ public class SelecJugadorController extends Controller implements Initializable 
             // Si el tiempo es válido, mostrar mensaje de confirmación
             Mensaje.show(Alert.AlertType.INFORMATION, "Tiempo configurado", "El tiempo se configuró correctamente.");
 
-            // Cambiar a la vista del tablero
-            FlowController.getInstance().goView("TableroView");
+            // se setea los parametros que se mandan a TableroController    
+            HashMap<String, Object> params = new HashMap<>();
+            params.put("jugador1", jugador1);  // Jugador con piezas blancas
+            params.put("jugador2", jugador2);  // Jugador con piezas negras
+            params.put("tiempoPartida", String.valueOf(tiempoPartida)); // Asegúrate de que sea un String
+
+            // Navegar a TableroController y pasarle los datos
+            FlowController.getInstance().goViewInStage("TableroView", stage);
+            TableroController tableroController = (TableroController) FlowController.getInstance().getController("TableroView");
+            tableroController.setParams(params);  // Asegúrate de que el setParams esté siendo llamado
 
         } catch (NumberFormatException e) {
             Mensaje.show(Alert.AlertType.ERROR, "Error", "Ingrese un número válido para el tiempo.");
@@ -114,13 +131,14 @@ public class SelecJugadorController extends Controller implements Initializable 
             btnGuardarSelec.setDisable(true);
         }
     }
-    
-     private void mostrarMensaje(String titulo, String mensaje) {
+
+    //metodo para mostrar los mensajes
+    private void mostrarMensaje(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-    
+
 }

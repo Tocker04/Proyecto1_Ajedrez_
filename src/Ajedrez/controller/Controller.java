@@ -5,6 +5,7 @@
  */
 package ajedrez.controller;
 
+import java.util.HashMap;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCode;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
  */
 public abstract class Controller {
 
-    private Stage stage;
+    public Stage stage;
 
     private String accion;
 
@@ -58,6 +59,11 @@ public abstract class Controller {
             }
         }
         return false;
+    }
+    
+    // Método para recibir parámetros adicionales
+    public void addParams(HashMap<String, Object> params) {
+        // Implementación vacía o base; las subclases pueden sobrescribir este método si necesitan usar los parámetros
     }
 
     public abstract void initialize();

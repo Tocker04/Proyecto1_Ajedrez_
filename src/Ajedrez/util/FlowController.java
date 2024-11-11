@@ -30,6 +30,19 @@ public class FlowController {
     private static Stage mainStage;
     private static ResourceBundle idioma;
     private static HashMap<String, FXMLLoader> loaders = new HashMap<>();
+    
+    //para guardar los parametros que se pasen entre vistas
+    private static HashMap<String, Object> params = new HashMap<>();
+
+    public void addParam(String key, Object value) {
+        params.put(key, value);
+    }
+
+    public Object getParam(String key) {
+        return params.get(key);
+    }
+
+
 
     private FlowController() {
     }
@@ -91,17 +104,18 @@ public class FlowController {
     }
 
     public void goView(String viewName) {
-        goView(viewName, "Center", null);
+        goView(viewName, "Center", null, null);//aca hice cambio
     }
 
     public void goView(String viewName, String accion) {
-        goView(viewName, "Center", accion);
+        goView(viewName, "Center", accion, null);//aca hice cambio
     }
 
-    public void goView(String viewName, String location, String accion) {
+    public void goView(String viewName, String location, String accion, HashMap<String, Object> params) { //aca hice cambio
         FXMLLoader loader = getLoader(viewName);
         Controller controller = loader.getController();
         controller.setAccion(accion);
+        controller.addParams(params); // Agrega los parámetros al controlador //aca hice cambio
         controller.initialize();
         Stage stage = controller.getStage();
         if (stage == null) {

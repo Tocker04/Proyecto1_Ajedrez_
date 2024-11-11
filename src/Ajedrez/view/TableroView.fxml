@@ -504,7 +504,7 @@
       </GridPane>
       <Label layoutX="921.0" layoutY="263.0" prefHeight="44.0" prefWidth="148.0" text="Captura Blancas" textFill="#f6ff00">
          <font>
-            <Font size="18.0" />
+            <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
       <Label layoutX="26.0" layoutY="271.0" prefHeight="44.0" prefWidth="134.0" text="Captura Negras" textFill="#fff200">
@@ -514,21 +514,46 @@
       </Label>
       <VBox fx:id="capturasBlancas" layoutX="904.0" layoutY="315.0" opacity="0.5" prefHeight="202.0" prefWidth="180.0" style="-fx-background-color: grey;" />
       <VBox fx:id="capturasNegras" layoutX="14.0" layoutY="315.0" opacity="0.5" prefHeight="202.0" prefWidth="180.0" style="-fx-background-color: grey;" />
-      <HBox layoutX="292.0" layoutY="20.0" prefHeight="56.0" prefWidth="502.0" spacing="30.0">
+      <HBox layoutX="292.0" layoutY="14.0" prefHeight="56.0" prefWidth="502.0" spacing="30.0">
          <children>
             <Label fx:id="jugadoractual" prefHeight="35.0" prefWidth="162.0" text="Jugador Actual" textAlignment="CENTER" textFill="#e5ff00">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Times New Roman" size="18.0" />
                </font></Label>
             <Label fx:id="tiempoBlancas" prefHeight="38.0" prefWidth="146.0" text="Tiempo Blancas" textFill="#e5ff00">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Times New Roman Bold" size="18.0" />
                </font></Label>
-            <Label fx:id="tiempoNegras" prefHeight="35.0" prefWidth="144.0" text="Tiempo Negras" textFill="#f5ff00">
+            <Label fx:id="tiempoNegras" prefHeight="35.0" prefWidth="144.0" text="Tiempo Negras" textFill="#e5ff00">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
          </children>
       </HBox>
+      <Label fx:id="lbJugadorBlanco" layoutX="14.0" layoutY="227.0" prefHeight="44.0" prefWidth="250.0" text="Jugador F.Blancas: " textFill="#fff200">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbJugadorNegro" layoutX="904.0" layoutY="227.0" prefHeight="44.0" prefWidth="250.0" text="Jugador F.Negras: " textFill="#fff200">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTiempoBlancas" layoutX="514.0" layoutY="55.0" prefHeight="44.0" prefWidth="87.0" text="______" textFill="#0600ff">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTiempoNegras" layoutX="698.0" layoutY="55.0" prefHeight="44.0" prefWidth="98.0" text="______" textFill="#0600ff">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbActualJugador" layoutX="326.0" layoutY="55.0" prefHeight="44.0" prefWidth="58.0" text="______" textFill="#fff200">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
