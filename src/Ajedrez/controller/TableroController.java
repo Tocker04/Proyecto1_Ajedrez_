@@ -1,8 +1,10 @@
 
 package Ajedrez.controller;
 
+import Ajedrez.Jugador;
 import ajedrez.controller.Controller;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -227,46 +229,92 @@ public class TableroController extends Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    private Jugador jugador1;
+    private Jugador jugador2;
+    private String tiempoPartida;
+    @FXML
+    private Label lbJugadorNegro; //player con piezas negras
+    @FXML
+    private Label lbJugadorBlanco; //player con piezas blancas
+    @FXML
+    private Label lbTiempoBlancas;
+    @FXML
+    private Label lbTiempoNegras;
+    @FXML
+    private Label lbActualJugador;
+    
+    
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Fichas negras
-    configurarEventosDeArrastre(Torre_negra_izq);
-    configurarEventosDeArrastre(Caballo_negro_izq);
-    configurarEventosDeArrastre(Alfil_negro_izq);
-    configurarEventosDeArrastre(Dama_negra);
-    configurarEventosDeArrastre(Rey_negro);
-    configurarEventosDeArrastre(Alfil_negro_der);
-    configurarEventosDeArrastre(Caballo_negro_der);
-    configurarEventosDeArrastre(Torre_negra_der);
-    
-    configurarEventosDeArrastre(Peon_negro1);
-    configurarEventosDeArrastre(Peon_negro2);
-    configurarEventosDeArrastre(Peon_negro3);
-    configurarEventosDeArrastre(Peon_negro4);
-    configurarEventosDeArrastre(Peon_negro5);
-    configurarEventosDeArrastre(Peon_negro6);
-    configurarEventosDeArrastre(Peon_negro7);
-    configurarEventosDeArrastre(Peon_negro8);
+    public void initialize() {
+        
+        // Inicializar eventos de drag-and-drop
+        inicializarPiezas();
+        
+        // Crear los jugadores
+        jugador1 = new Jugador("Jugador Blanco", "Blanco"); // Asignar nombre y color
+        jugador2 = new Jugador("Jugador Negro", "Negro");
 
-    // Fichas blancas
-    configurarEventosDeArrastre(Torre_Blanca_izq);
-    configurarEventosDeArrastre(Caballo_Blanca_izq);
-    configurarEventosDeArrastre(Alfil_Blanca_izq);
-    configurarEventosDeArrastre(Dama_Blanca);
-    configurarEventosDeArrastre(Rey_Blanca);
-    configurarEventosDeArrastre(Alfil_Blanca_der);
-    configurarEventosDeArrastre(Caballo_Blanca_der);
-    configurarEventosDeArrastre(Torre_Blanca_der);
+        // Actualizar los labels con los nombres de los jugadores
+        lbJugadorBlanco.setText(jugador1.getNombreJugador()); // Nombre jugador blanco
+        lbJugadorNegro.setText(jugador2.getNombreJugador()); // Nombre jugador negro
+        
+        
+        
+        
+    }
+
     
-    configurarEventosDeArrastre(Peon_Blanco1);
-    configurarEventosDeArrastre(Peon_Blanco2);
-    configurarEventosDeArrastre(Peon_Blanco3);
-    configurarEventosDeArrastre(Peon_Blanco4);
-    configurarEventosDeArrastre(Peon_Blanco5);
-    configurarEventosDeArrastre(Peon_Blanco6);
-    configurarEventosDeArrastre(Peon_Blanco7);
-    configurarEventosDeArrastre(Peon_Blanco8);
-    }    
+    //@Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Inicializar eventos de drag-and-drop
+        //inicializarPiezas();
+
+        // Inicializar otros componentes, si es necesario
+    }
+
+    private void inicializarPiezas() {
+        // Fichas negras
+        configurarEventosDeArrastre(Torre_negra_izq);
+        configurarEventosDeArrastre(Caballo_negro_izq);
+        configurarEventosDeArrastre(Alfil_negro_izq);
+        configurarEventosDeArrastre(Dama_negra);
+        configurarEventosDeArrastre(Rey_negro);
+        configurarEventosDeArrastre(Alfil_negro_der);
+        configurarEventosDeArrastre(Caballo_negro_der);
+        configurarEventosDeArrastre(Torre_negra_der);
+        
+        configurarEventosDeArrastre(Peon_negro1);
+        configurarEventosDeArrastre(Peon_negro2);
+        configurarEventosDeArrastre(Peon_negro3);
+        configurarEventosDeArrastre(Peon_negro4);
+        configurarEventosDeArrastre(Peon_negro5);
+        configurarEventosDeArrastre(Peon_negro6);
+        configurarEventosDeArrastre(Peon_negro7);
+        configurarEventosDeArrastre(Peon_negro8);
+        //... Configurar arrastre para otras piezas negras
+
+        // Fichas blancas
+        configurarEventosDeArrastre(Torre_Blanca_izq);
+        configurarEventosDeArrastre(Caballo_Blanca_izq);
+        configurarEventosDeArrastre(Alfil_Blanca_izq);
+        configurarEventosDeArrastre(Dama_Blanca);
+        configurarEventosDeArrastre(Rey_Blanca);
+        configurarEventosDeArrastre(Alfil_Blanca_der);
+        configurarEventosDeArrastre(Caballo_Blanca_der);
+        configurarEventosDeArrastre(Torre_Blanca_der);
+        
+        configurarEventosDeArrastre(Peon_Blanco1);
+        configurarEventosDeArrastre(Peon_Blanco2);
+        configurarEventosDeArrastre(Peon_Blanco3);
+        configurarEventosDeArrastre(Peon_Blanco4);
+        configurarEventosDeArrastre(Peon_Blanco5);
+        configurarEventosDeArrastre(Peon_Blanco6);
+        configurarEventosDeArrastre(Peon_Blanco7);
+        configurarEventosDeArrastre(Peon_Blanco8);
+        //... Configurar arrastre para otras piezas blancas
+    }
 
     private void configurarEventosDeArrastre(ImageView ficha) {
         ficha.setOnDragDetected(event -> {
@@ -298,9 +346,54 @@ public class TableroController extends Controller implements Initializable {
             event.consume();
         });
     }
-    @Override
-    public void initialize() {
-   
+
+    public void setParams(HashMap<String, Object> params) {
+        if (params != null) {
+            this.jugador1 = (Jugador) params.get("jugador1");
+            this.jugador2 = (Jugador) params.get("jugador2");
+            Object tiempoPartidaObj = params.get("tiempoPartida");
+            if (tiempoPartidaObj != null) {
+                this.tiempoPartida = String.valueOf(tiempoPartidaObj);
+            } else {
+                this.tiempoPartida = "No especificado"; // o algún valor predeterminado
+            }
+            
+        }
+
+        // Suponemos que el jugador1 tiene las piezas blancas y el jugador2 las negras
+        if (jugador1.getColorFicha().equals("Blancas")) {
+            lbJugadorBlanco.setText("Jugador Blanco: " + jugador1.getNombreJugador());
+            lbJugadorNegro.setText("Jugador Negro: " + jugador2.getNombreJugador());
+        } else {
+            lbJugadorBlanco.setText("Jugador Blanco: " + jugador2.getNombreJugador());
+            lbJugadorNegro.setText("Jugador Negro: " + jugador1.getNombreJugador());
+        }
+
+        // Imprimir los nombres de los jugadores y el tiempo de la partida (opcional)
+        System.out.println("Jugador 1: " + jugador1.getNombreJugador());
+        System.out.println("Jugador 2: " + jugador2.getNombreJugador());
+        System.out.println("Tiempo de partida: " + tiempoPartida);
+        
+        actualizarVista();
     }
+
+    private void actualizarVista() {
+        lbJugadorBlanco.setText("Jugador Blanco: " + jugador1.getNombreJugador());
+        lbJugadorNegro.setText("Jugador Negro: " + jugador2.getNombreJugador());
+
+        String tiempoTexto = tiempoPartida + ":00 ";
+        lbTiempoBlancas.setText(tiempoTexto);  // Mostrando el tiempo en el label correspondiente a las blancas
+        lbTiempoNegras.setText(tiempoTexto);   // Mostrando el tiempo en el label correspondiente a las negras
+
+        inicializarTablero();
+    }
+
+    private void inicializarTablero() {
+        // Configurar el tablero con las piezas en sus posiciones iniciales
+        System.out.println("Tablero inicializado con jugadores: " + jugador1.getNombreJugador() + " y " + jugador2.getNombreJugador());
+    }
+
+    
+
     
 }
