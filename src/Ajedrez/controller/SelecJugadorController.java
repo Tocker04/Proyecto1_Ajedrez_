@@ -142,4 +142,3 @@ public class SelecJugadorController extends Controller implements Initializable 
     }
 
 }
-//prueba
