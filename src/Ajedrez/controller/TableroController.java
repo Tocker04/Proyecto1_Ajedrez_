@@ -3,14 +3,18 @@ package Ajedrez.controller;
 import Ajedrez.Jugador;
 import ajedrez.controller.Controller;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -228,11 +232,7 @@ public class TableroController extends Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
-    private Jugador jugador1;
-    private Jugador jugador2;
-    private String tiempoPartida;
-
-    boolean turnoBlanco;
+  
 
     @FXML
     private Label lbJugadorNegro; //player con piezas negras
@@ -244,6 +244,16 @@ public class TableroController extends Controller implements Initializable {
     private Label lbTiempoNegras;
     @FXML
     private Label lbActualJugador;
+    
+    
+    private Jugador jugador1;
+    private Jugador jugador2;
+    private String tiempoPartida;
+    boolean turnoBlanco;
+    @FXML
+    private ImageView Torre_Blanca_der1;
+    @FXML
+    private ImageView Torre_Blanca_der11;
 
     @Override
     public void initialize() {
@@ -472,6 +482,18 @@ public class TableroController extends Controller implements Initializable {
     private void inicializarTablero() {
         // Configurar el tablero con las piezas en sus posiciones iniciales
         System.out.println("Tablero inicializado con jugadores: " + jugador1.getNombreJugador() + " y " + jugador2.getNombreJugador());
+    }
+
+    @FXML
+    private void setOnMouseClickedPieza(MouseEvent event) {
+    }
+
+    @FXML
+    private void setOnMouseDraggedPieza(MouseEvent event) {
+    }
+
+    @FXML
+    private void setOnMouseReleasedPieza(MouseEvent event) {
     }
 
 }
