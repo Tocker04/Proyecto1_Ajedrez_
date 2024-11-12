@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Ajedrez;
 
 /**
@@ -10,6 +7,49 @@ package Ajedrez;
  */
 public class Peon extends Fichas {
 
+    private boolean primerMovimiento;
+
+    public Peon(String color, int posicionX, int posicionY) {
+        super(color, posicionX, posicionY);
+        this.primerMovimiento = true;
+    }
+
+    @Override
+    public boolean movimientoValido(int xDestino, int yDestino) {
+        int direccion = color.equals("blanco") ? 1 : -1;
+        if (primerMovimiento && xDestino == posicionX + 2 * direccion && yDestino == posicionY) {
+            return true;
+        } else if (xDestino == posicionX + direccion && yDestino == posicionY) {
+            return true;
+        } else if (xDestino == posicionX + direccion && Math.abs(yDestino - posicionY) == 1) {
+            // Captura en diagonal
+            return true;
+        }
+        return false;
+    }
+
+    public boolean puedePromocionar() {
+        return (color.equals("blanco") && posicionX == 7) || (color.equals("negro") && posicionX == 0);
+    }
+
+    public Fichas promocionar(String nuevaPieza) {
+        switch (nuevaPieza.toLowerCase()) {
+            case "reina":
+                return new Reina(color, posicionX, posicionY);
+            case "torre":
+                return new Torre(color, posicionX, posicionY);
+            case "alfil":
+                return new Alfil(color, posicionX, posicionY);
+            case "caballo":
+                return new Caballo(color, posicionX, posicionY);
+            default:
+                return null;
+        }
+    }
+    
+    
+    
+    /*
     public Peon(String color, int posicionX, int posicionY) {
         super(color, posicionX, posicionY);
     }
@@ -37,5 +77,5 @@ public class Peon extends Fichas {
         }
         
         return false;
-    }
+    }*/
 }

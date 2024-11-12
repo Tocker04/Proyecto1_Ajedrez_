@@ -45,7 +45,7 @@
          <children>
             <Pane fx:id="A8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
                <children>
-                  <ImageView fx:id="Torre_negra_izq" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Torre_negra_izq" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Torre_negra.png" />
                      </image>
@@ -54,7 +54,7 @@
             </Pane>
             <Pane fx:id="A7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro1" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro1" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -66,7 +66,7 @@
             <Pane fx:id="A3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Pane fx:id="A2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco1" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco1" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMousePressed="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -75,7 +75,7 @@
             </Pane>
             <Pane fx:id="A1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Torre_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="12.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Torre_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="12.0" layoutY="7.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Torre_Blanca.png" />
                      </image>
@@ -85,7 +85,7 @@
             <Pane fx:id="A4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Pane fx:id="B8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2">
                <children>
-                  <ImageView fx:id="Caballo_negro_izq" fitHeight="44.0" fitWidth="58.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Caballo_negro_izq" fitHeight="44.0" fitWidth="58.0" layoutX="15.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Caballo_negro.png" />
                      </image>
@@ -98,7 +98,7 @@
             <Pane fx:id="B3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
             <Pane fx:id="B2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco2" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco2" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -107,7 +107,7 @@
             </Pane>
             <Pane fx:id="B1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Caballo_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="12.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Caballo_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="12.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMousePressed="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Caballo_Blanca.png" />
                      </image>
@@ -116,7 +116,7 @@
             </Pane>
             <Pane fx:id="C8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3">
                <children>
-                  <ImageView fx:id="Alfil_negro_izq" fitHeight="44.0" fitWidth="58.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Alfil_negro_izq" fitHeight="44.0" fitWidth="58.0" layoutX="15.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Alfil_negro.png" />
                      </image>
@@ -125,7 +125,7 @@
             </Pane>
             <Pane fx:id="C7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro3" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro3" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -137,7 +137,7 @@
             <Pane fx:id="C3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
             <Pane fx:id="C2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco3" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco3" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -146,7 +146,7 @@
             </Pane>
             <Pane fx:id="C1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Alfil_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Alfil_Blanca_izq" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Alfil_Blanca.png" />
                      </image>
@@ -155,7 +155,7 @@
             </Pane>
             <Pane fx:id="B7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro2" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro2" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -165,7 +165,7 @@
             <Pane fx:id="C4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Pane fx:id="D8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4">
                <children>
-                  <ImageView fx:id="Dama_negra" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Dama_negra" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Dama_negra.png" />
                      </image>
@@ -174,7 +174,7 @@
             </Pane>
             <Pane fx:id="D7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro4" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro4" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -187,7 +187,7 @@
             <Pane fx:id="D3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
             <Pane fx:id="D2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco4" fitHeight="44.0" fitWidth="58.0" layoutX="17.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco4" fitHeight="44.0" fitWidth="58.0" layoutX="17.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -196,7 +196,7 @@
             </Pane>
             <Pane fx:id="D1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Dama_Blanca" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Dama_Blanca" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Dama_Blanca.png" />
                      </image>
@@ -205,7 +205,7 @@
             </Pane>
             <Pane fx:id="E8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5">
                <children>
-                  <ImageView fx:id="Rey_negro" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Rey_negro" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Rey_negro.png" />
                      </image>
@@ -214,7 +214,7 @@
             </Pane>
             <Pane fx:id="E7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro5" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro5" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -226,7 +226,7 @@
             <Pane fx:id="E4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
             <Pane fx:id="E2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco5" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco5" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -235,7 +235,7 @@
             </Pane>
             <Pane fx:id="E1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Rey_Blanca" fitHeight="44.0" fitWidth="58.0" layoutX="18.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Rey_Blanca" fitHeight="44.0" fitWidth="58.0" layoutX="18.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Rey_Blanca.png" />
                      </image>
@@ -244,7 +244,7 @@
             </Pane>
             <Pane fx:id="F8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6">
                <children>
-                  <ImageView fx:id="Alfil_negro_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Alfil_negro_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="3.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Alfil_negro.png" />
                      </image>
@@ -253,7 +253,7 @@
             </Pane>
             <Pane fx:id="F7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro6" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro6" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -266,7 +266,7 @@
             <Pane fx:id="F3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
             <Pane fx:id="F2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco6" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco6" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -275,7 +275,7 @@
             </Pane>
             <Pane fx:id="F1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Alfil_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Alfil_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Alfil_Blanca.png" />
                      </image>
@@ -284,7 +284,7 @@
             </Pane>
             <Pane fx:id="G8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7">
                <children>
-                  <ImageView fx:id="Caballo_negro_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Caballo_negro_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Caballo_negro.png" />
                      </image>
@@ -293,7 +293,7 @@
             </Pane>
             <Pane fx:id="G7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro7" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro7" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -306,7 +306,7 @@
             <Pane fx:id="G3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
             <Pane fx:id="G2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco7" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco7" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -315,7 +315,7 @@
             </Pane>
             <Pane fx:id="G1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Caballo_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Caballo_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Caballo_Blanca.png" />
                      </image>
@@ -324,7 +324,7 @@
             </Pane>
             <Pane fx:id="H8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="8">
                <children>
-                  <ImageView fx:id="Torre_negra_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Torre_negra_der" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Torre_negra.png" />
                      </image>
@@ -333,7 +333,7 @@
             </Pane>
             <Pane fx:id="H7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="8" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="Peon_negro8" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_negro8" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_negro.png" />
                      </image>
@@ -346,7 +346,7 @@
             <Pane fx:id="H3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="8" GridPane.rowIndex="5" />
             <Pane fx:id="H2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="8" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="Peon_Blanco8" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Peon_Blanco8" fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="6.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Peon_Blanco.png" />
                      </image>
@@ -355,7 +355,7 @@
             </Pane>
             <Pane fx:id="H1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="8" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="Torre_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="11.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Torre_Blanca_der" fitHeight="44.0" fitWidth="58.0" layoutX="11.0" layoutY="4.0" onMouseClicked="#setOnMouseClickedPieza" onMouseDragged="#setOnMouseDraggedPieza" onMouseReleased="#setOnMouseReleasedPieza" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Torre_Blanca.png" />
                      </image>
@@ -502,12 +502,12 @@
             </Label>
          </children>
       </GridPane>
-      <Label layoutX="921.0" layoutY="263.0" prefHeight="44.0" prefWidth="148.0" text="Captura Blancas" textFill="#f6ff00">
+      <Label layoutX="921.0" layoutY="263.0" prefHeight="44.0" prefWidth="148.0" text="Fichas capturadas" textFill="#f6ff00">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="271.0" prefHeight="44.0" prefWidth="134.0" text="Captura Negras" textFill="#fff200">
+      <Label layoutX="26.0" layoutY="271.0" prefHeight="44.0" prefWidth="180.0" text="Fichas capturadas" textFill="#fff200">
          <font>
             <Font size="18.0" />
          </font>
@@ -530,12 +530,12 @@
                </font></Label>
          </children>
       </HBox>
-      <Label fx:id="lbJugadorBlanco" layoutX="14.0" layoutY="227.0" prefHeight="44.0" prefWidth="250.0" text="Jugador F.Blancas: " textFill="#fff200">
+      <Label fx:id="lbJugadorBlanco" layoutX="886.0" layoutY="235.0" prefHeight="44.0" prefWidth="285.0" text="Jugador F.Blancas: " textFill="#fff200">
          <font>
             <Font name="Times New Roman Bold" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="lbJugadorNegro" layoutX="904.0" layoutY="227.0" prefHeight="44.0" prefWidth="250.0" text="Jugador F.Negras: " textFill="#fff200">
+      <Label fx:id="lbJugadorNegro" layoutX="14.0" layoutY="235.0" prefHeight="44.0" prefWidth="261.0" text="Jugador F.Negras: " textFill="#fff200">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
